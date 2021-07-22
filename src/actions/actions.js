@@ -1,6 +1,7 @@
 export const ACTIONS = {
     INCREMENT: 'INCREMENT',
-    DECREMENT: 'DECREMENT'
+    DECREMENT: 'DECREMENT',
+    IS_LOGGED: 'IS_LOGGED'
 }
 
 export const increment = () => {
@@ -12,5 +13,11 @@ export const increment = () => {
 export const decrement = () => {
     return {
         type: ACTIONS.DECREMENT
+    }
+}
+
+export const isLogged = () => {
+    return {
+        type: ACTIONS.IS_LOGGED
     }
 }

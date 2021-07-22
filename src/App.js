@@ -6,7 +6,7 @@ import './App.css';
 import {createStore} from "redux";
 import {allReducers} from "./reducers/reducers";
 import {useSelector, useDispatch} from "react-redux";
-import {increment, decrement} from "./actions/actions";
+import {increment, decrement, isLogged} from "./actions/actions";
 
 export const INITIAL_STATE = {
     startValue: 0,
@@ -30,6 +30,7 @@ function App() {
         {!loginInfo ? 'User is not logged in' : 'User is logged in'}
         <button onClick={() => dispatch(increment())}>Plus</button>
         <button onClick={() => dispatch(decrement())}>Minus</button>
+        <button onClick={() => dispatch(isLogged())}>Login</button>
     </div>
   );
 }
