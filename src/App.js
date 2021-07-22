@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+// npm i redux react-redux
+// wrapping by Provider all APP in index.js import {Provider} from "react-redux";
+// store.subscribe(() => console.log(store.getState()));
+// store.dispatch(increment());
 import './App.css';
+import {createStore} from "redux";
+import {allReducers} from "./reducers/reducers";
+import {useSelector, useDispatch} from "react-redux";
+import {increment, decrement} from "./actions/actions";
 
+export const INITIAL_STATE = {
+    startValue: 0,
+    isLoggedIn: false
+}
+export const store = createStore(
+    allReducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+console.log('STORE', store)
 function App() {
+    const counter = useSelector(state => state.counter)
+    const loginInfo = useSelector(state => state.login)
+    const dispatch = useDispatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome!</h1>
+        <h3>{INITIAL_STATE.startValue}</h3>
+        <p>Counter: {counter}</p>
+        <p>Login: {loginInfo.toString()}</p>
+        {!loginInfo ? 'User is not logged in' : 'User is logged in'}
+        <button onClick={() => dispatch(increment())}>Plus</button>
+        <button onClick={() => dispatch(decrement())}>Minus</button>
     </div>
   );
 }
