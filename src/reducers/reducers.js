@@ -1,9 +1,11 @@
 import {combineReducers} from "redux";
 
 import {counterReducer} from "./counter";
-import {loginReducer} from "./isLogged";
+import {loginReducer} from "./logIn";
+import {logOutReducer} from "./logOut";
 
 export const allReducers = combineReducers({
     counter: counterReducer,
-    login: loginReducer
+    login: loginReducer,
+    logOut: logOutReducer
 })
