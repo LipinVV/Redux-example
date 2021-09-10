@@ -1,4 +1,4 @@
-import {decrement, increment, isLogged} from "../actions/actions";
+import {decrement, increment, incrementByAmount} from "../actions/actions";
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
 
@@ -13,7 +13,7 @@ export const Calculations = () => {
 
     const inputHandler = (evt) => {
         const { value } = evt.target
-        setValue(value)
+        setValue(Number(value))
     }
 
     return (
@@ -25,7 +25,7 @@ export const Calculations = () => {
             <input value={value} onChange={inputHandler} type='number'/>
             <button onClick={() => dispatch(increment(value))}>Plus</button>
             <button onClick={() => dispatch(decrement(value))}>Minus</button>
-            <button onClick={() => dispatch(isLogged())}>Login</button>
+            <button onClick={() => dispatch(incrementByAmount(value))}>Add amount</button>
         </div>
     )
 }

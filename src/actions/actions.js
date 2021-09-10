@@ -1,8 +1,7 @@
 export const ACTIONS = {
     INCREMENT: 'INCREMENT',
     DECREMENT: 'DECREMENT',
-    IS_LOGGED: 'IS_LOGGED',
-    IS_NOT_LOGGED: 'IS_NOT_LOGGED'
+    INCREMENT_BY_AMOUNT: 'INCREMENT_BY_AMOUNT',
 }
 
 export const increment = (number) => {
@@ -19,16 +18,9 @@ export const decrement = (number) => {
     }
 }
 
-export const isLogged = (status) => {
+export const incrementByAmount = (number) => {
     return {
-        type: ACTIONS.IS_LOGGED,
-        payload: status
-    }
-}
-
-export const isLoggedOut = (status) => {
-    return {
-        type: ACTIONS.IS_NOT_LOGGED,
-        payload: status
+        type: ACTIONS.INCREMENT_BY_AMOUNT,
+        payload: number
     }
 }

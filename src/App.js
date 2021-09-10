@@ -7,15 +7,14 @@ import './App.css';
 import {createStore} from "redux";
 import {allReducers} from "./reducers/reducers";
 import {Calculations} from "./calculations/Calculations";
-import {Login} from "./login-page/Login";
-import {createClient} from '@supabase/supabase-js'
-import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
-import {Signature} from "./login-page/Signature";
+import {BrowserRouter as Router } from 'react-router-dom';
 
 
-export const server = createClient('https://xhvnywjafhcirlskluzp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyNTU5MjA4OSwiZXhwIjoxOTQxMTY4MDg5fQ.wmUD2lxoMGSRnK5gRaNpxUDVPOd5fH6C41GZdOm_at0')
-export const userLoggedIn = Boolean(server.auth.session()?.user);
-console.log('APP userLoggedIn =>', userLoggedIn, server.auth.session()?.user)
+export const initialStore = {
+    summary : 0,
+    other: 0,
+}
+
 export const store = createStore(
     allReducers,
     {},
@@ -24,15 +23,14 @@ export const store = createStore(
 store.subscribe(() => {
     localStorage['redux-store'] = JSON.stringify(store.getState())
 })
-console.log(localStorage)
+console.log('store', store.getState())
 function App() {
-    const globalState = useSelector(state => state)
-    console.log('globalState', globalState)
+    // the same approach if you want to check Redux store
+    // const globalState = useSelector(state => state)
+    // console.log('globalState', globalState)
     return (
         <div className="App">
             <Router>
-                <Login/>
-                <Signature/>
                 <Calculations />
             </Router>
         </div>
