@@ -7,6 +7,7 @@ import {createStore} from "redux";
 import {allReducers} from "./reducers/reducers";
 import {Calculations} from "./calculations/Calculations";
 import {BrowserRouter as Router } from 'react-router-dom';
+import {Tasks} from "./Tasks/Tasks";
 
 export const store = createStore(
     allReducers,
@@ -16,7 +17,6 @@ export const store = createStore(
 store.subscribe(() => {
     localStorage['redux-store'] = JSON.stringify(store.getState())
 })
-console.log('store', store.getState())
 function App() {
     // the same approach if you want to check Redux store
     // const globalState = useSelector(state => state)
@@ -25,6 +25,7 @@ function App() {
         <div className="App">
             <Router>
                 <Calculations />
+                <Tasks/>
             </Router>
         </div>
     );

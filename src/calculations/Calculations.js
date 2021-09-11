@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
 
 export const Calculations = () => {
-
+    const currentState = useSelector(state => state)
     const counter = useSelector(state => state.counter.summary);
     const warning = useSelector(state => state.counter.other);
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export const Calculations = () => {
         const { value } = evt.target
         setValue(Number(value))
     }
-
+    console.log('dynamic state is: ', currentState)
     return (
         <div>
             <h1>Welcome!</h1>

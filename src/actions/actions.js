@@ -2,7 +2,7 @@ export const ACTIONS = {
     INCREMENT: 'INCREMENT',
     DECREMENT: 'DECREMENT',
     INCREMENT_BY_AMOUNT: 'INCREMENT_BY_AMOUNT',
-    POST_WARNING: 'POST_WARNING'
+    TASK_MANAGEMENT: 'TASK_MANAGEMENT'
 }
 
 export const increment = (number) => {
@@ -26,9 +26,9 @@ export const incrementByAmount = (number) => {
     }
 }
 
-export const postWarning = (message) => {
+export const taskManagement = (message) => {
     return {
-        type: ACTIONS.POST_WARNING,
+        type: ACTIONS.TASK_MANAGEMENT,
         payload: message
     }
 }
