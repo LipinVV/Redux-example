@@ -2,18 +2,11 @@
 // wrapping by Provider all APP in index.js import {Provider} from "react-redux";
 // store.subscribe(() => console.log(store.getState()));
 // store.dispatch(increment());
-import {useSelector} from "react-redux";
 import './App.css';
 import {createStore} from "redux";
 import {allReducers} from "./reducers/reducers";
 import {Calculations} from "./calculations/Calculations";
 import {BrowserRouter as Router } from 'react-router-dom';
-
-
-export const initialStore = {
-    summary : 0,
-    other: 0,
-}
 
 export const store = createStore(
     allReducers,
