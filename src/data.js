@@ -3,6 +3,4 @@ export const initialStore = {
     other: "All is good",
 }
 
-export const tasks = {
-
-}
+export const taskList = [];

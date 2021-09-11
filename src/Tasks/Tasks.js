@@ -1,43 +1,56 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useState, useEffect} from "react";
-import {tasks} from "../data";
-import {taskManager} from "../reducers/taskManager";
-import {taskManagement} from "../actions/actions";
+import {useDispatch} from "react-redux";
+import {useState} from "react";
+import {taskManagementAddTask, taskManagementRemoveTask} from "../actions/actions";
 
 export const Tasks = () => {
     const dispatch = useDispatch();
     const [value, setValue] = useState("");
-    const [tasks, setTask] = useState([]);
+    const [task, setTask] = useState([]);
+    const [taskId, setTaskId] = useState(0);
 
     const handleChanger = (evt) => {
-        const { value } = evt.target
+        const {value} = evt.target;
         setValue(value);
     }
 
-    const submitHandler = () => {
+    const submitTaskHandler = () => {
+        setTaskId(prevState => prevState + 1)
         setTask([
-            ...tasks,
-            {text: value, completed: false, id: Math.round(Math.random() * 10)}
+            ...task,
+            {text: value, completed: false, id: taskId}
         ]);
-        dispatch(taskManagement(tasks));
-        setValue('');
+    }
+    const removeTaskHandler = (id) => {
+        setTask(task.filter(issue => issue.id !== id));
     }
 
-    useEffect(() => {
 
-    }, [tasks])
     return (
         <div>
             <input value={value} onChange={handleChanger} type='text'/>
-            <button onClick={submitHandler}>Add task</button>
-            <button>Remove task</button>
-            <div>
-                {tasks.length > 0 && tasks.map((task, index )=> {
+            <button
+                onClick={() => {
+                dispatch(taskManagementAddTask(
+                    {value, completed: false, id: taskId}
+                ));
+                submitTaskHandler()
+                setValue('');
+            }}>Add task
+            </button>
+            <br/>
+            <br/>
+            <div style={{display: 'flex', marginTop: '50px'}}>
+                {task.map((task, index) => {
                     return (
                         <div key={Date.now() + index}>
                             <div>{task.id}</div>
                             <div>{task.text}</div>
                             <div>{task.completed.toString()}</div>
+                            <button onClick={() => {
+                                removeTaskHandler(task.id)
+                                dispatch(taskManagementRemoveTask(task))
+                            }}>Remove task
+                            </button>
                         </div>
                     )
                 })}

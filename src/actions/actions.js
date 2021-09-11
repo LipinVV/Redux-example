@@ -2,7 +2,8 @@ export const ACTIONS = {
     INCREMENT: 'INCREMENT',
     DECREMENT: 'DECREMENT',
     INCREMENT_BY_AMOUNT: 'INCREMENT_BY_AMOUNT',
-    TASK_MANAGEMENT: 'TASK_MANAGEMENT'
+    TASK_MANAGEMENT_ADD_TASK: 'TASK_MANAGEMENT_ADD_TASK',
+    TASK_MANAGEMENT_REMOVE_TASK: 'TASK_MANAGEMENT_REMOVE_TASK'
 }
 
 export const increment = (number) => {
@@ -26,9 +27,16 @@ export const incrementByAmount = (number) => {
     }
 }
 
-export const taskManagement = (message) => {
+export const taskManagementAddTask = (task) => {
     return {
-        type: ACTIONS.TASK_MANAGEMENT,
-        payload: message
+        type: ACTIONS.TASK_MANAGEMENT_ADD_TASK,
+        payload: task
+    }
+}
+
+export const taskManagementRemoveTask = (task) => {
+    return {
+        type: ACTIONS.TASK_MANAGEMENT_REMOVE_TASK,
+        payload: task
     }
 }
