@@ -1,1 +1,1 @@
-Simple Redux things were practiced to abtain the experience.
+Practicing simple Redux things to obtain the experience.
