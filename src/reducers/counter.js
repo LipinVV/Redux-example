@@ -3,15 +3,15 @@ import {initialStore} from "../data";
 
 
 export const counterReducer = (state = initialStore, action) => {
+    const warning = 'The value cannot be below zero'
     switch(action.type) {
         case ACTIONS.INCREMENT: {
             if(state.summary >= 0) {
-                state.other = 'All is good'
+                state.other = 'The value above zero'
             }
             return {...state, summary: state.summary + 1}
         }
         case ACTIONS.DECREMENT: {
-            const warning = 'the value cannot be below zero'
             if(state.summary <= 0) {
                 return {...state, other: warning}
             }
@@ -20,7 +20,10 @@ export const counterReducer = (state = initialStore, action) => {
 
         case ACTIONS.INCREMENT_BY_AMOUNT: {
             if(state.summary >= 0) {
-                state.other = 'All is good'
+                state.other = 'The value above zero'
+            }
+            if(state.summary <= 0) {
+                return {...state, other: warning}
             }
             return {...state, summary: state.summary + action.payload}
         }

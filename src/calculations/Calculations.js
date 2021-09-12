@@ -13,7 +13,7 @@ export const Calculations = () => {
         setValue(Number(value));
     }
     return (
-        <div>
+        <div style={{marginBottom: '50px'}}>
             <p>Counter: {counter}</p>
             <p>{warning}</p>
             <input value={value} onChange={inputHandler} type='number'/>

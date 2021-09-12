@@ -1,0 +1,42 @@
+.tasks {
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.tasks__tasks-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    background-color: honeydew;
+}
+
+.task__single-task {
+    border: 3px solid   black;
+    min-width: 200px;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.task__single-task-completed {
+
+}
+
+.tasks__button {
+    cursor: pointer;
+    border: none;
+    background-color: coral;
+    max-width: 100px;
+    margin: 1px 1px auto;
+    min-height: 30px;
+    font-size: 12px;
+}
+
+.tasks__button-completed {
+    background-color: aquamarine;
+}
+
+.tasks__button-remove {
+    background-color: crimson;
+}

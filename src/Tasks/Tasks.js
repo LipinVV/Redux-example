@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {taskManagementAddTask, taskManagementRemoveTask, taskManagementUpdateTask} from "../actions/actions";
+import './tasks.css';
 
 export const Tasks = () => {
     const curState = useSelector(state => state)
@@ -60,11 +61,12 @@ export const Tasks = () => {
         }
         return groupTask;
     }
-
+    console.log(curState)
     return (
-        <div>
+        <div className='tasks'>
             <input value={value} onChange={handleChanger} type='text'/>
             <button
+                className='tasks__button'
                 onClick={() => {
                     dispatch(taskManagementAddTask(
                         {value, completed: false, id: taskId}
@@ -80,20 +82,25 @@ export const Tasks = () => {
                 <option value='completed'>Completed</option>
                 <option value='uncompleted'>Uncompleted</option>
             </select>
-            <div style={{display: 'flex', marginTop: '50px'}}>
+            <div className='tasks__tasks-block'>
                 {groupTask.map((task, index) => {
                     return (
-                        <div key={Date.now() + index}>
-                            <div>{task.id}</div>
+                        <div
+                            className={!task.completed ? 'task__single-task' : 'task__single-task task__single-task-completed'}
+                            key={Date.now() + index}>
+                            <div>id: {task.id + 1}</div>
                             <div>{task.text}</div>
-                            <div>{task.completed.toString()}</div>
-                            <button onClick={() => {
+                            <button
+                                className={!task.completed ? 'tasks__button' : 'tasks__button tasks__button-completed'}
+                                onClick={() => {
                                 completeHandler(task.id);
                                 dispatch(taskManagementUpdateTask(task));
                             }
-                            }>Complete
+                            }>{task.completed ? 'Completed' : 'Complete'}
                             </button>
-                            <button onClick={() => {
+                            <button
+                                className='tasks__button tasks__button-remove'
+                                onClick={() => {
                                 removeTaskHandler(task.id);
                                 dispatch(taskManagementRemoveTask(task));
                             }}>Remove task

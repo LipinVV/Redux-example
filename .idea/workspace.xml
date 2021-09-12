@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="680e0de7-8f3b-41f7-a123-67aa4f9f1ff2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tasks/tasks.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tasks/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Tasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/taskManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculations/Calculations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculations/Calculations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/counter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
       <workItem from="1627029095205" duration="357000" />
       <workItem from="1627029470298" duration="650000" />
       <workItem from="1631278034253" duration="5887000" />
-      <workItem from="1631354240971" duration="30338000" />
+      <workItem from="1631354240971" duration="32864000" />
     </task>
     <task id="LOCAL-00001" summary="a draft was created">
       <created>1626817792170</created>
@@ -103,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631377008666</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="task management - filtering tasks: completed/uncompleted and dispatching their status to the redux store">
+      <created>1631449069118</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631449069118</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +127,7 @@
     <MESSAGE value="the simple things in state management has been tested" />
     <MESSAGE value="task management - adding a task and dispatching it" />
     <MESSAGE value="task management - removing a task and dispatching it" />
-    <option name="LAST_COMMIT_MESSAGE" value="task management - removing a task and dispatching it" />
+    <MESSAGE value="task management - filtering tasks: completed/uncompleted and dispatching their status to the redux store" />
+    <option name="LAST_COMMIT_MESSAGE" value="task management - filtering tasks: completed/uncompleted and dispatching their status to the redux store" />
   </component>
 </project>
