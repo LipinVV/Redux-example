@@ -3,7 +3,8 @@ export const ACTIONS = {
     DECREMENT: 'DECREMENT',
     INCREMENT_BY_AMOUNT: 'INCREMENT_BY_AMOUNT',
     TASK_MANAGEMENT_ADD_TASK: 'TASK_MANAGEMENT_ADD_TASK',
-    TASK_MANAGEMENT_REMOVE_TASK: 'TASK_MANAGEMENT_REMOVE_TASK'
+    TASK_MANAGEMENT_REMOVE_TASK: 'TASK_MANAGEMENT_REMOVE_TASK',
+    TASK_MANAGEMENT_UPDATE_TASK: 'TASK_MANAGEMENT_UPDATE_TASK',
 }
 
 export const increment = (number) => {
@@ -37,6 +38,13 @@ export const taskManagementAddTask = (task) => {
 export const taskManagementRemoveTask = (task) => {
     return {
         type: ACTIONS.TASK_MANAGEMENT_REMOVE_TASK,
+        payload: task
+    }
+}
+
+export const taskManagementUpdateTask = (task) => {
+    return {
+        type: ACTIONS.TASK_MANAGEMENT_UPDATE_TASK,
         payload: task
     }
 }

@@ -9,6 +9,17 @@ export const taskManager = (state = {tasks : taskList}, action) => {
         case ACTIONS.TASK_MANAGEMENT_REMOVE_TASK: {
             return {...state, tasks: state.tasks.filter(task => task.id !== action.payload.id)}
         }
+        case ACTIONS.TASK_MANAGEMENT_UPDATE_TASK: {
+            return {...state, tasks: state.tasks.map(task => {
+                if(task.id === action.payload.id) {
+                    return {
+                        ...task,
+                        completed: !task.completed
+                    }
+                }
+                return task
+                })}
+        }
         default: {
             return state
         }

@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tasks/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Tasks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculations/Calculations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculations/Calculations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/taskManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +52,7 @@
       <workItem from="1627029095205" duration="357000" />
       <workItem from="1627029470298" duration="650000" />
       <workItem from="1631278034253" duration="5887000" />
-      <workItem from="1631354240971" duration="19547000" />
+      <workItem from="1631354240971" duration="30338000" />
     </task>
     <task id="LOCAL-00001" summary="a draft was created">
       <created>1626817792170</created>
@@ -98,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631364423061</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="task management - removing a task and dispatching it">
+      <created>1631377008666</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631377008666</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +116,7 @@
     <MESSAGE value="exploring Redux, started to re-create logic" />
     <MESSAGE value="the simple things in state management has been tested" />
     <MESSAGE value="task management - adding a task and dispatching it" />
-    <option name="LAST_COMMIT_MESSAGE" value="task management - adding a task and dispatching it" />
+    <MESSAGE value="task management - removing a task and dispatching it" />
+    <option name="LAST_COMMIT_MESSAGE" value="task management - removing a task and dispatching it" />
   </component>
 </project>

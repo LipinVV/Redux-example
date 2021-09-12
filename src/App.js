@@ -25,7 +25,7 @@ function App() {
         <div className="App">
             <h1>Redux playground</h1>
             <Router>
-                <Calculations />
+                {/*<Calculations />*/}
                 <Tasks/>
             </Router>
         </div>
