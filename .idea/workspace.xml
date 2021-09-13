@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="680e0de7-8f3b-41f7-a123-67aa4f9f1ff2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tasks/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Tasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/counter.js" afterDir="false" />
-    </list>
+    <list default="true" id="680e0de7-8f3b-41f7-a123-67aa4f9f1ff2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +47,7 @@
       <workItem from="1627029470298" duration="650000" />
       <workItem from="1631278034253" duration="5887000" />
       <workItem from="1631354240971" duration="33441000" />
-      <workItem from="1631516201195" duration="561000" />
+      <workItem from="1631516201195" duration="847000" />
     </task>
     <task id="LOCAL-00001" summary="a draft was created">
       <created>1626817792170</created>
@@ -116,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631451923660</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="set up a new things to do in the future, formatted code">
+      <created>1631516981566</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1631516981566</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +135,7 @@
     <MESSAGE value="task management - removing a task and dispatching it" />
     <MESSAGE value="task management - filtering tasks: completed/uncompleted and dispatching their status to the redux store" />
     <MESSAGE value="task management - added styles and some logic to a layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="task management - added styles and some logic to a layout" />
+    <MESSAGE value="set up a new things to do in the future, formatted code" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up a new things to do in the future, formatted code" />
   </component>
 </project>
