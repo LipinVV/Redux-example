@@ -9,7 +9,7 @@ export const Calculations = () => {
     const [value, setValue] = useState(1);
 
     const inputHandler = (evt) => {
-        const { value } = evt.target;
+        const {value} = evt.target;
         setValue(Number(value));
     }
     return (

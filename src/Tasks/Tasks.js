@@ -4,12 +4,12 @@ import {taskManagementAddTask, taskManagementRemoveTask, taskManagementUpdateTas
 import './tasks.css';
 
 export const Tasks = () => {
-    const curState = useSelector(state => state)
+    const curState = useSelector(state => state);
     const dispatch = useDispatch();
     const [value, setValue] = useState("");
     const [task, setTask] = useState([]);
     const [taskId, setTaskId] = useState(0);
-    const [groupTask, setGroundTask] = useState([])
+    const [groupTask, setGroundTask] = useState([]);
 
     const handleChanger = (evt) => {
         const {value} = evt.target;
@@ -17,7 +17,7 @@ export const Tasks = () => {
     }
 
     const submitTaskHandler = () => {
-        setTaskId(prevState => prevState + 1)
+        setTaskId(prevState => prevState + 1);
         setTask([
             ...task,
             {text: value, completed: false, id: taskId}
@@ -50,18 +50,20 @@ export const Tasks = () => {
     }, [task, filter]);
 
     const filterHandler = (value) => {
-        if(value === 'completed') {
+        if (value === 'completed') {
             setGroundTask(task.filter(el => el.completed === true));
         }
-        if(value === 'uncompleted') {
+        if (value === 'uncompleted') {
             setGroundTask(task.filter(el => el.completed === false));
         }
-        if(value === 'all') {
+        if (value === 'all') {
             setGroundTask(task);
         }
         return groupTask;
     }
     console.log(curState)
+    // to think about how to push / transfer somewhere else filtered tasks, to another page maybe
+    // keep tasks in a localstorage
     return (
         <div className='tasks'>
             <input value={value} onChange={handleChanger} type='text'/>
@@ -93,17 +95,17 @@ export const Tasks = () => {
                             <button
                                 className={!task.completed ? 'tasks__button' : 'tasks__button tasks__button-completed'}
                                 onClick={() => {
-                                completeHandler(task.id);
-                                dispatch(taskManagementUpdateTask(task));
-                            }
-                            }>{task.completed ? 'Completed' : 'Complete'}
+                                    completeHandler(task.id);
+                                    dispatch(taskManagementUpdateTask(task));
+                                }
+                                }>{task.completed ? 'Completed' : 'Complete'}
                             </button>
                             <button
                                 className='tasks__button tasks__button-remove'
                                 onClick={() => {
-                                removeTaskHandler(task.id);
-                                dispatch(taskManagementRemoveTask(task));
-                            }}>Remove task
+                                    removeTaskHandler(task.id);
+                                    dispatch(taskManagementRemoveTask(task));
+                                }}>Remove task
                             </button>
                         </div>
                     )

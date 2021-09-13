@@ -19,12 +19,6 @@ export const counterReducer = (state = initialStore, action) => {
         }
 
         case ACTIONS.INCREMENT_BY_AMOUNT: {
-            if(state.summary >= 0) {
-                state.other = 'The value above zero'
-            }
-            if(state.summary <= 0) {
-                return {...state, other: warning}
-            }
             return {...state, summary: state.summary + action.payload}
         }
         default: {
