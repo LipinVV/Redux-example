@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="680e0de7-8f3b-41f7-a123-67aa4f9f1ff2" name="Default Changelist" comment="" />
+    <list default="true" id="680e0de7-8f3b-41f7-a123-67aa4f9f1ff2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tasks/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Tasks.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../React drafts/tasklist_no_node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -47,7 +50,9 @@
       <workItem from="1627029470298" duration="650000" />
       <workItem from="1631278034253" duration="5887000" />
       <workItem from="1631354240971" duration="33441000" />
-      <workItem from="1631516201195" duration="847000" />
+      <workItem from="1631516201195" duration="898000" />
+      <workItem from="1631598950664" duration="7946000" />
+      <workItem from="1633964068752" duration="4616000" />
     </task>
     <task id="LOCAL-00001" summary="a draft was created">
       <created>1626817792170</created>
@@ -119,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631516981566</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="set up a new things to do in the future, formatted code">
+      <created>1631517100053</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1631517100053</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
