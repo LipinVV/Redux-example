@@ -11,7 +11,7 @@ export const Tasks = () => {
     const [taskId, setTaskId] = useState(0);
     const [groupTask, setGroundTask] = useState([]);
     const [editingText, setEditingText] = useState("");
-    const [taskToChange, setTaskToChange] = useState([]);
+    const [taskToChange, setTaskToChange] = useState(null);
 
     useEffect(() => {
         const json = localStorage.getItem("task");
@@ -53,7 +53,7 @@ export const Tasks = () => {
             }
             return oneTask;
         }))
-        setTaskToChange(id)
+        setTaskToChange(id);
     }
 
     const saveTextTask = (id) => {
@@ -66,6 +66,18 @@ export const Tasks = () => {
             return oneTask;
         }))
     }
+
+    const discardTextTask = (id) => {
+        setTask(task.map(oneTask => {
+            if (oneTask.id === id) {
+                return {
+                    ...oneTask, changed: false
+                }
+            }
+            return oneTask;
+        }))
+    }
+
     const removeTaskHandler = (id) => {
         setTask(task.filter(issue => issue.id !== id));
     }
@@ -129,7 +141,7 @@ export const Tasks = () => {
                 <option value='uncompleted'>Uncompleted</option>
             </select>
             <div className='tasks__tasks-block'>
-                {groupTask.map((task, index) =>
+                {groupTask.map(task=>
                     <div
                         className={!task.completed ? 'task__single-task' : 'task__single-task task__single-task-completed'}
                         key={task.id}>
@@ -159,27 +171,38 @@ export const Tasks = () => {
                                 dispatch(taskManagementRemoveTask(task));
                             }}>Remove task
                         </button>
+                        {task.id !== taskToChange ?
+                            <button
+                                type='button'
+                                onClick={() => {
+                                    editTextTask(task.id);
+                                }}
+                            >
+                                Edit
+                            </button>
+                            :
+                            <button
+                                type='button'
+                                onClick={() => {
+                                    saveTextTask(task.id);
+                                    setTaskToChange(null);
+                                }}
+                            >
+                                Save
+                            </button>
+                        }
+                        {task.id === taskToChange &&
                         <button
                             type='button'
                             onClick={() => {
-                                editTextTask(task.id)
+                                setEditingText('');
+                                discardTextTask(task.id);
+                                setTaskToChange(null);
                             }}
-                        >
-                            Edit
-                        </button>
-                        <button
-                            type='button'
                         >
                             Discard
                         </button>
-                        <button
-                            type='button'
-                            onClick={() => {
-                                saveTextTask(task.id);
-                            }}
-                        >
-                            Save
-                        </button>
+                        }
                     </div>
                 )
                 }
