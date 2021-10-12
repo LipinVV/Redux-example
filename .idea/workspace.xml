@@ -55,7 +55,7 @@
       <workItem from="1633964068752" duration="4616000" />
       <workItem from="1633968742465" duration="58000" />
       <workItem from="1634026844236" duration="12472000" />
-      <workItem from="1634047493406" duration="1126000" />
+      <workItem from="1634047493406" duration="2037000" />
     </task>
     <task id="LOCAL-00001" summary="a draft was created">
       <created>1626817792170</created>
@@ -148,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634040503592</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixed inappropriate work of discard button">
+      <created>1634048687667</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634048687667</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +174,7 @@
     <MESSAGE value="set up a new things to do in the future, formatted code" />
     <MESSAGE value="add feature to change task text and save it; have a bug with the input during text changes" />
     <MESSAGE value="added feature to change task text and save it in a proper way plus put it in a localstorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added feature to change task text and save it in a proper way plus put it in a localstorage" />
+    <MESSAGE value="fixed inappropriate work of discard button" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed inappropriate work of discard button" />
   </component>
 </project>

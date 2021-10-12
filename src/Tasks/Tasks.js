@@ -121,7 +121,10 @@ export const Tasks = () => {
 
     return (
         <div className='tasks'>
-            <input value={value} onChange={handleChanger} type='text'/>
+            <input
+                value={value}
+                onChange={handleChanger}
+                type='text'/>
             <button
                 type='button'
                 className='tasks__button'
@@ -146,7 +149,7 @@ export const Tasks = () => {
                         className={!task.completed ? 'task__single-task' : 'task__single-task task__single-task-completed'}
                         key={task.id}>
                         <div>
-                            id: {task.id}
+                            <div>id: {task.id}</div>
                             {task.changed  ?
                                 <input
                                     type='text'
@@ -176,6 +179,7 @@ export const Tasks = () => {
                                 type='button'
                                 onClick={() => {
                                     editTextTask(task.id);
+                                    setEditingText(task.text);
                                 }}
                             >
                                 Edit
@@ -195,7 +199,7 @@ export const Tasks = () => {
                         <button
                             type='button'
                             onClick={() => {
-                                setEditingText('');
+                                // setEditingText('');
                                 discardTextTask(task.id);
                                 setTaskToChange(null);
                             }}
