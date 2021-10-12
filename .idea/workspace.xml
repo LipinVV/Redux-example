@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="680e0de7-8f3b-41f7-a123-67aa4f9f1ff2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tasks/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Tasks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +56,8 @@
       <workItem from="1631516201195" duration="898000" />
       <workItem from="1631598950664" duration="7946000" />
       <workItem from="1633964068752" duration="4616000" />
+      <workItem from="1633968742465" duration="58000" />
+      <workItem from="1634026844236" duration="11744000" />
     </task>
     <task id="LOCAL-00001" summary="a draft was created">
       <created>1626817792170</created>
@@ -131,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631517100053</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add feature to change task text and save it; have a bug with the input during text changes">
+      <created>1633968793750</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1633968793750</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +160,7 @@
     <MESSAGE value="task management - filtering tasks: completed/uncompleted and dispatching their status to the redux store" />
     <MESSAGE value="task management - added styles and some logic to a layout" />
     <MESSAGE value="set up a new things to do in the future, formatted code" />
-    <option name="LAST_COMMIT_MESSAGE" value="set up a new things to do in the future, formatted code" />
+    <MESSAGE value="add feature to change task text and save it; have a bug with the input during text changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add feature to change task text and save it; have a bug with the input during text changes" />
   </component>
 </project>
