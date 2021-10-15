@@ -4,6 +4,8 @@
     <list default="true" id="680e0de7-8f3b-41f7-a123-67aa4f9f1ff2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tasks/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Tasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/taskManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,9 @@
       <workItem from="1633964068752" duration="4616000" />
       <workItem from="1633968742465" duration="58000" />
       <workItem from="1634026844236" duration="12472000" />
-      <workItem from="1634047493406" duration="2037000" />
+      <workItem from="1634047493406" duration="2281000" />
+      <workItem from="1634126731309" duration="40000" />
+      <workItem from="1634289496701" duration="14478000" />
     </task>
     <task id="LOCAL-00001" summary="a draft was created">
       <created>1626817792170</created>
@@ -155,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634048687667</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixed work of editing button">
+      <created>1634049615268</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634049615268</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +186,7 @@
     <MESSAGE value="add feature to change task text and save it; have a bug with the input during text changes" />
     <MESSAGE value="added feature to change task text and save it in a proper way plus put it in a localstorage" />
     <MESSAGE value="fixed inappropriate work of discard button" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed inappropriate work of discard button" />
+    <MESSAGE value="fixed work of editing button" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed work of editing button" />
   </component>
 </project>

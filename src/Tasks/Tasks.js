@@ -1,51 +1,57 @@
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
-import {taskManagementAddTask, taskManagementRemoveTask, taskManagementUpdateTask} from "../actions/actions";
+import {
+    taskManagementAddTask,
+    taskManagementCompleteTask,
+    taskManagementRemoveTask,
+    taskManagementUpdateTask
+} from "../actions/actions";
 import './tasks.css';
 
 export const Tasks = () => {
     const curState = useSelector(state => state);
     const dispatch = useDispatch();
     const [value, setValue] = useState('');
-    const [task, setTask] = useState([]);
+    const [tasks, setTasks] = useState([]);
     const [taskId, setTaskId] = useState(0);
     const [groupTask, setGroundTask] = useState([]);
-    const [editingText, setEditingText] = useState("");
+    const [editingText, setEditingText] = useState('');
     const [taskToChange, setTaskToChange] = useState(null);
 
     useEffect(() => {
         const json = localStorage.getItem("task");
         const loadedTasks = JSON.parse(json);
         if (loadedTasks) {
-            setTask(loadedTasks);
+            setTasks(loadedTasks);
         }
     }, []);
 
     useEffect(() => {
-        const json = JSON.stringify(task);
+        const json = JSON.stringify(tasks);
         localStorage.setItem("task", json);
-    }, [task]);
+    }, [tasks]);
 
     const handleChanger = (evt) => {
         const {value} = evt.target;
         setValue(value);
     }
 
-    const editTaskHandleChanger = (evt) => {
+    const editTaskHandleChanger = (evt, id) => {
         const {value} = evt.target;
         setEditingText(value);
+        dispatch(taskManagementUpdateTask({id: id, text: value}));
     }
 
     const submitTaskHandler = () => {
         setTaskId(prevState => prevState + 1);
-        setTask([
-            ...task,
+        setTasks([
+            ...tasks,
             {text: value, completed: false, id: taskId, changed: false}
         ]);
     }
 
     const editTextTask = (id) => {
-        setTask(task.map(oneTask => {
+        setTasks(tasks.map(oneTask => {
             if (oneTask.id === id) {
                 return {
                     ...oneTask, changed: true
@@ -57,7 +63,7 @@ export const Tasks = () => {
     }
 
     const saveTextTask = (id) => {
-        setTask(task.map(oneTask => {
+        setTasks(tasks.map(oneTask => {
             if (oneTask.id === id) {
                 return {
                     ...oneTask, text: editingText, changed: false
@@ -68,7 +74,7 @@ export const Tasks = () => {
     }
 
     const discardTextTask = (id) => {
-        setTask(task.map(oneTask => {
+        setTasks(tasks.map(oneTask => {
             if (oneTask.id === id) {
                 return {
                     ...oneTask, changed: false
@@ -79,14 +85,14 @@ export const Tasks = () => {
     }
 
     const removeTaskHandler = (id) => {
-        setTask(task.filter(issue => issue.id !== id));
+        setTasks(tasks.filter(issue => issue.id !== id));
     }
 
     const completeHandler = (id) => {
-        setTask(task.map(oneTask => {
+        setTasks(tasks.map(oneTask => {
             if (oneTask.id === id) {
                 return {
-                    ...oneTask, completed: !oneTask.completed
+                    ...oneTask, completed: oneTask.completed !== true
                 }
             }
             return oneTask;
@@ -102,22 +108,21 @@ export const Tasks = () => {
 
     useEffect(() => {
         filterHandler(filter);
-    }, [task, filter]);
+    }, [tasks, filter]);
 
     const filterHandler = (value) => {
         if (value === 'completed') {
-            setGroundTask(task.filter(el => el.completed === true));
+            setGroundTask(tasks.filter(el => el.completed === true));
         }
         if (value === 'uncompleted') {
-            setGroundTask(task.filter(el => el.completed === false));
+            setGroundTask(tasks.filter(el => el.completed === false));
         }
         if (value === 'all') {
-            setGroundTask(task);
+            setGroundTask(tasks);
         }
         return groupTask;
     }
-    console.log(curState)
-
+    console.log('redux', curState.taskManager.tasks)
 
     return (
         <div className='tasks'>
@@ -130,7 +135,12 @@ export const Tasks = () => {
                 className='tasks__button'
                 onClick={() => {
                     dispatch(taskManagementAddTask(
-                        {value, completed: false, id: taskId}
+                        {
+                            text: value,
+                            completed: false,
+                            id: taskId,
+                            changed: false
+                        }
                     ));
                     submitTaskHandler();
                     setValue('');
@@ -154,7 +164,7 @@ export const Tasks = () => {
                                 <input
                                     type='text'
                                     value={editingText}
-                                    onChange={editTaskHandleChanger}/> : <div>{task.text}</div>
+                                    onChange={(evt) => editTaskHandleChanger(evt, task.id)}/> : <div>{task.text}</div>
                             }
                         </div>
                         <button
@@ -162,7 +172,7 @@ export const Tasks = () => {
                             className={!task.completed ? 'tasks__button' : 'tasks__button tasks__button-completed'}
                             onClick={() => {
                                 completeHandler(task.id);
-                                dispatch(taskManagementUpdateTask(task));
+                                dispatch(taskManagementCompleteTask(task));
                             }
                             }>{task.completed ? 'Completed' : 'Complete'}
                         </button>
@@ -199,7 +209,6 @@ export const Tasks = () => {
                         <button
                             type='button'
                             onClick={() => {
-                                // setEditingText('');
                                 discardTextTask(task.id);
                                 setTaskToChange(null);
                             }}
@@ -211,7 +220,6 @@ export const Tasks = () => {
                 )
                 }
             </div>
-
         </div>
     )
 }
